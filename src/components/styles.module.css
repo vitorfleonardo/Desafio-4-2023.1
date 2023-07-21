@@ -1,0 +1,62 @@
+.boxTodo {
+  background-color: #42506463;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  cursor: grab;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.titleTodo {
+  border-bottom: 2px solid #887b6b;
+  margin-bottom: 5px;
+  height: 20%;
+  width: 100%;
+}
+
+.infoTodo {
+  display: flex;
+  height: 80%;
+  width: 100%;
+}
+
+.deadlineAndSignedTodo {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border-right: 2px solid #887b6b;
+}
+
+div.titleTodo > input {
+  width: 100%;
+  resize: none;
+  border: none;
+  text-align: center;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  background: transparent;
+  font-size: 18px;
+  outline: none;
+  color: #fff;
+}
+
+div.infoTodo > div > input {
+  width: 100%;
+  resize: none;
+  border: none;
+  text-align: left;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  background: transparent;
+  font-size: 14px;
+  outline: none;
+  color: #fff;
+}
+
+.deletebtn {
+  cursor: pointer;
+}
