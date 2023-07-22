@@ -77,11 +77,11 @@ function App() {
     setTodos(tempTodos);
   };
 
-  const handleDelete = (index) => {
-    const newList = [...todos];
-    newList.splice(index, 1);
-    localStorage.setItem("todo", JSON.stringify(todos));
-    setTodos(newList);
+  const handleDelete = (idToDelete: string) => {
+    "idToDelete";
+    const updatedTodos = todos.filter((item) => item.id !== idToDelete);
+
+    setTodos(updatedTodos);
   };
 
   return (
@@ -96,7 +96,7 @@ function App() {
           >
             {todos
               .filter((todo) => todo.column === "incomplete")
-              .map((todo, index) => {
+              .map((todo) => {
                 return (
                   <div
                     key={todo.id}
@@ -104,7 +104,10 @@ function App() {
                     onDragStart={() => (draggedTodoItem.current = todo.id)}
                     onDragOver={(e) => e.preventDefault()}
                   >
-                    <Task handleDelete={handleDelete} todo={todo} />
+                    <Task handleDelete={handleDelete} />
+                    <button onClick={() => handleDelete(todo.id)}>
+                      Deletar
+                    </button>
                   </div>
                 );
               })}
@@ -132,6 +135,9 @@ function App() {
                     onDrop={() => handleColumnDrop("progress")}
                   >
                     <Task handleDelete={handleDelete} />
+                    <button onClick={() => handleDelete(todo.id)}>
+                      Deletar
+                    </button>
                   </div>
                 );
               })}
@@ -159,6 +165,9 @@ function App() {
                     onDrop={() => handleColumnDrop("completed")}
                   >
                     <Task handleDelete={handleDelete} />
+                    <button onClick={() => handleDelete(todo.id)}>
+                      Deletar
+                    </button>
                   </div>
                 );
               })}

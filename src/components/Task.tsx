@@ -1,7 +1,6 @@
 import styles from "./styles.module.css";
 
-function Task({ handleDelete })
-{
+function Task() {
   return (
     <div className={styles.boxTodo}>
       <div className={styles.titleTodo}>
@@ -18,9 +17,9 @@ function Task({ handleDelete })
           <input placeholder="Descricao" maxLength={80}></input>
         </div>
       </div>
-      <div>
+      {/* <div>
         <button onClick={handleDelete}>Delete</button>
-      </div>
+      </div> */}
     </div>
   );
 }
